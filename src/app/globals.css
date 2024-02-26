@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+    /* div {
+        border: 1px solid #000;
+    } */
+
+    img{
+        transition: .3 ease all;
+    }
+    
+    img:hover {
+        scale: 102%;
+    }
