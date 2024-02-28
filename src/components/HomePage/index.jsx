@@ -20,9 +20,10 @@ const HomePage = () => {
                 <div className="flex md:flex-row md:w-full md:px-11 flex-col items-center justify-between p-6 -mt-5 md:mt-4">
                     <Image
                     src={"/hidroponik.jpg"}
-                    width={600}
-                    height={500}
-                    className="rounded-full"
+                    width="0"
+                    height="0"
+                    sizes="100vw"
+                    className="rounded-full w-full h-auto"
                     alt="Hidroponik"
                     priority="high"
                     />

@@ -15,8 +15,12 @@ const Navbar = () => {
                 <circle cx="39" cy="48.6" r="4.2" fill="#0F1837"/>
             </svg> */}
             <Image 
-            className="bg-white rounded-full"
-            src={"/logo.png"} width={70} height={60} priority alt="Logo"/>
+            className="bg-white rounded-full w-16 h-16"
+            src={"/logo.png"} 
+            width="0"
+            height="0"
+            sizes="100vw" 
+            priority alt="Logo"/>
                 <ul className="flex flex-row gap-5 md:gap-7 justify-between p-2">
                     <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/">Home</Link></li>
                     <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/NilaiSensor">Nilai Sensor</Link></li>
