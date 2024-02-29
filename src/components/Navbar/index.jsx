@@ -25,7 +25,7 @@ const Navbar = () => {
                     <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/">Home</Link></li>
                     <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/NilaiSensor">Nilai Sensor</Link></li>
                     <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/GrafikSensor">Grafik Sensor</Link></li>
-                    <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/About">About</Link></li>
+                    <li className="md:text-xl text-gray-200 hover:text-green-500 transition-all"><Link href="/Control">Control</Link></li>
                 </ul>
             <div>
                 <button className="bg-green-500 md:px-7 md:text-xl text-sm rounded-full p-2 text-white hover:bg-green-600 hover:text-yellow-400"><User size={25}/></button>

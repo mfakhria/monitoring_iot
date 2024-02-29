@@ -3,7 +3,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer/Footer";
 
-const gabarito = Gabarito({ subsets: ["latin"] });
+const gabarito = Gabarito({ subsets: ["latin"], display: 'swap', adjustFontFallback: false});
 
 export const metadata = {
   title: "Monitoring-IOT",

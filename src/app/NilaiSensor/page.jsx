@@ -2,7 +2,7 @@
 import { onValue, ref } from "firebase/database";
 import { useState, useEffect } from "react";
 import { database } from "../firebaseConfig";
-import Table from "@/components/Table/Index";
+
 
 
 const NilaiSensor = () => {
@@ -40,7 +40,7 @@ const NilaiSensor = () => {
   return (
     <>
       {/* LAYOUT */}
-      <div className="flex items-center justify-center container mx-auto max-w-6xl mt-4 md:mt-5 mb-12 md:mb-32">
+      <div className="flex items-center justify-center container mx-auto max-w-6xl mt-6 md:mt-5 mb-10 md:mb-32">
         {/* GRID */}
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cold-3 gap-9 md:w-full w-64 mb-5 ">
           {/* CARD */}
@@ -74,7 +74,7 @@ const NilaiSensor = () => {
             <div className="p-5 flex flex-col">
               <div className="rounded-none overflow-hidden">
                 <h1 className="font-bold rounded-xl text-2xl bg-green-500 p-2 md:p-5 text-white border-2 border-black hover:bg-green-600">
-                  PH
+                  pH
                 </h1>
                 <p className="md:text-8xl text-4xl md:pt-20 pt-3 text-white font-semibold md:m-0 m-5">
                   {sensor.ph.toFixed(1)}{sensor.ph === NaN ? '' : <span></span>}

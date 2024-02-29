@@ -11,7 +11,6 @@
   "dependencies": {
     "@phor-icons/react": "^2.0.15",
     "@phosphor-icons/react": "^2.0.15",
-    "@tanstack/react-table": "^8.13.0",
     "chart.js": "^4.4.1",
     "express": "^4.18.2",
     "firebase": "^10.8.0",
@@ -20,10 +19,7 @@
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18",
-    "react-table": "^7.8.0",
-    "serialport": "^12.0.0",
-    "socket.io": "^4.7.4",
-    "socket.io-client": "^4.7.4"
+    "sweetalert2": "^11.10.5"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",
