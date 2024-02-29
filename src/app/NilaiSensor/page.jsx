@@ -3,39 +3,36 @@ import { onValue, ref } from "firebase/database";
 import { useState, useEffect } from "react";
 import { database } from "../firebaseConfig";
 
-
-
 const NilaiSensor = () => {
-    const [sensor, setSensor] = useState({ suhu: 0, ph: 0, ppm: 0 });
+  const [sensor, setSensor] = useState({ suhu: 0, ph: 0, ppm: 0 });
 
-    useEffect(() => {
-      const sensorRef = ref(database, "sensor");
-  
-      const fetchData = () => {
-        try {
-          onValue(sensorRef, (snapshot) => {
-            if (snapshot.exists()) {
-              const data = snapshot.val();
-              setSensor({
-                suhu: parseFloat(data.suhu),
-                ph: parseFloat(data.ph),
-                ppm: parseFloat(data.ppm),
-              });
-            } else {
-              console.log("No Data Available");
-            }
-          });
-        } catch (error) {
-          console.error(error);
-        }
-  
-        return () => {
-          off(sensorRef);
-        };
-      };
-  
-      fetchData();
-    }, []);
+  useEffect(() => {
+    const sensorDataRef = ref(database, "sensorData");
+
+    const fetchData = () => {
+      try {
+        onValue(sensorDataRef, (snapshot) => {
+          if (snapshot.exists()) {
+            const timestamps = Object.keys(snapshot.val());
+            const latestTimestamp = timestamps[timestamps.length - 1];
+            const latestData = snapshot.val()[latestTimestamp];
+
+            setSensor({
+              suhu: parseFloat(latestData.suhu),
+              ph: parseFloat(latestData.ph),
+              ppm: parseFloat(latestData.ppm),
+            });
+          } else {
+            console.log("No Data Available");
+          }
+        });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -51,7 +48,8 @@ const NilaiSensor = () => {
                   SUHU
                 </h1>
                 <p className="md:text-8xl text-4xl md:pt-20 pt-3 text-white font-semibold md:m-0 m-5">
-                {sensor.suhu.toFixed(1)}{sensor.suhu === NaN ? '' : <span style={{ marginLeft: "5px" }}>{'\u00b0'}</span>}
+                  {sensor.suhu.toFixed(1)}
+                  {sensor.suhu === NaN ? "" : <span style={{ marginLeft: "5px" }}>{'\u00b0'}</span>}
                 </p>
               </div>
             </div>
@@ -64,7 +62,8 @@ const NilaiSensor = () => {
                   PPM
                 </h1>
                 <p className="md:text-8xl text-4xl md:pt-20 pt-3 text-white font-semibold md:m-0 m-5">
-                  {sensor.ppm.toFixed(1)}{sensor.ppm === NaN ? '' : <span></span>}
+                  {sensor.ppm.toFixed(1)}
+                  {sensor.ppm === NaN ? "" : <span></span>}
                 </p>
               </div>
             </div>
@@ -77,7 +76,8 @@ const NilaiSensor = () => {
                   pH
                 </h1>
                 <p className="md:text-8xl text-4xl md:pt-20 pt-3 text-white font-semibold md:m-0 m-5">
-                  {sensor.ph.toFixed(1)}{sensor.ph === NaN ? '' : <span></span>}
+                  {sensor.ph.toFixed(1)}
+                  {sensor.ph === NaN ? "" : <span></span>}
                 </p>
               </div>
             </div>

@@ -1,8 +1,10 @@
 "use client"
 
+import SensorChart from "@/components/Grafik/SensorChart"
+
 const GrafikSensor = () => {
     return (
-        <div>GrafikSensor</div>
+        <SensorChart />
     )
 }
 
