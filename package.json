@@ -9,7 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/font": "^14.1.0",
     "@phor-icons/react": "^2.0.15",
     "@phosphor-icons/react": "^2.0.15",
     "@tanstack/react-table": "^8.13.0",
