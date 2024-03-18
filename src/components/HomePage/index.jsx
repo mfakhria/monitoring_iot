@@ -19,11 +19,11 @@ const HomePage = () => {
                 </div>
                 <div className="flex md:flex-row md:w-full md:px-11 flex-col items-center justify-between p-6 -mt-5 md:mt-4">
                     <Image
-                    src={"/hidroponik.jpg"}
+                    src={"/kale.jpg"}
                     width="0"
                     height="0"
                     sizes="100vw"
-                    className="rounded-full w-full h-auto"
+                    className="rounded-full w-full h-auto hover:scale-105"
                     alt="Hidroponik"
                     priority="high"
                     />
