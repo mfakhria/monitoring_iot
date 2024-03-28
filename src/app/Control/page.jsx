@@ -8,7 +8,7 @@ const ControlInput = ({ label, id, placeholder, onSubmit }) => {
   const handleClick = () => {
     // Perform any necessary validations or API calls here
 
-    // Show SweetAlert success message
+    // Alert Notification
     Swal.fire({
       icon: "success",
       title: "Success!",
@@ -22,6 +22,7 @@ const ControlInput = ({ label, id, placeholder, onSubmit }) => {
     setInputValue("");
   };
 
+  // Label 
   return (
     <div className="text-center text-white text-2xl font-bold mb-3">
       <label htmlFor={id}>{label}</label>
@@ -35,9 +36,11 @@ const ControlInput = ({ label, id, placeholder, onSubmit }) => {
           type="number"
         />
       </div>
+
+      {/* Button Submit */}
       <button
         id={`${id}_button`}
-        className="lex w-fill mt-3 justify-center rounded-md bg-slate-800 hover:bg-slate-900 transition-all px-3 py-1.5 text-xl font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        className="lex w-fill mt-4 mb-3 justify-center rounded-md bg-slate-800 hover:bg-slate-900 transition-all px-3 py-1.5 text-xl font-semibold leading-6 text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
         type="button"
         onClick={handleClick}
       >
@@ -57,6 +60,7 @@ const ControlSwitch = ({ label, id, onToggle }) => {
     onToggle(!isChecked);
   };
 
+  // Switch Button
   return (
     <div className="flex gap-5 max-w-6xl mx-auto items-center justify-center text-center text-white text-2xl font-bold w-40  bg-cyan-600 hover:bg-cyan-700 rounded-lg p-3 transition-all mb-4">
       <label htmlFor={id}>{label}</label>
@@ -72,24 +76,23 @@ const ControlSwitch = ({ label, id, onToggle }) => {
   );
 };
 
+// Function Switch Control
 const Control = () => {
   const handleTimerSubmit = (value) => {
-    // Handle the timer value submission
     console.log("Timer value submitted:", value);
   };
 
   const handlePumpToggle = (isPumpOn) => {
-    // Handle the pump toggle state
     console.log("Pump state changed:", isPumpOn ? "On" : "Off");
   };
 
   const handleTapToggle = (isTapOpen) => {
-    // Handle the tap toggle state
     console.log("Tap state changed:", isTapOpen ? "Open" : "Closed");
   };
 
   return (
     <>
+
       {/* Layout */}
       <div className="container items-center justify-center max-w-6xl mx-auto mt-6 md:mt-5 mb-10 md:mb-32">
         <form>
@@ -134,6 +137,7 @@ const Control = () => {
           </div>
         </form>
       </div>
+
     </>
   );
 };

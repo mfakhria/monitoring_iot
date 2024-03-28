@@ -11,7 +11,7 @@ const HomePage = () => {
                     Monitoring <br /> Hidroponik
                     </h1>
                     <p className="text-white">
-                    Website ini dapat memudahkan pengguna untuk <br /> melihat kondisi seputar data tanaman hidroponik.
+                    Website ini dapat memudahkan pengguna untuk <br/> melihat kondisi seputar data tanaman hidroponik.
                     </p>
                     <Link href="/NilaiSensor" className="bg-green-500 md:px-7 md:text-xl text-sm rounded-full p-4 text-white hover:bg-green-600 hover:scale-105">
                     Cek Sekarang !   
